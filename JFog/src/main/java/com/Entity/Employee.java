@@ -2,10 +2,10 @@ package com.Entity;
 
 public class Employee {
     
-    int id;
-    String ename;
-    int ephone;
-    String password;
+    private int id;
+    private String ename;
+    private int ephone;
+    private String password;
 
     public Employee(int id, String ename, int ephone, String password) {
         this.id = id;

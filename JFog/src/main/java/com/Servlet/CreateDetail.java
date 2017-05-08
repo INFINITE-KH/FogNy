@@ -1,14 +1,11 @@
 package com.Servlet;
 
 import com.Entity.Detail;
-import com.Entity.Product;
+import com.Entity.Orderline;
 import com.Mapper.DBFacade;
-import com.Mapper.DetailMapper;
+import com.Service.OrderlineCalculator;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -19,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "CreateDetail", urlPatterns = {"/CreateDetail"})
 public class CreateDetail extends HttpServlet {
+    
+    private OrderlineCalculator oc = new OrderlineCalculator();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
@@ -32,28 +31,27 @@ public class CreateDetail extends HttpServlet {
         String roof = request.getParameter("roof");
         
         Detail d = new Detail(length, heigth, width, roof);
+        Orderline o = oc.calcParts(d.getLength(), d.getHeigth(), d.getWidth(), d.getRoof());
+        
+        //TODO: Create an order using the detail and order created above and link that to costumer
+        // then add the variables of the order to session variables 
         
         if(dm.createDetail(d)){
             request.getSession().setAttribute("length", d.getLength());
             request.getSession().setAttribute("heigth", d.getHeigth());
             request.getSession().setAttribute("width", d.getWidth());
             request.getSession().setAttribute("roof", d.getRoof());
-        
+            if(dm.createOrderline(o)){
+                request.getSession().setAttribute("woodAmount", o.getWood_qty());
+                request.getSession().setAttribute("screwAmount", o.getScrew_qty());
+                request.getSession().setAttribute("bracketAmount", o.getBracket());
+            }
             request.getRequestDispatcher("").forward(request, response);
 
         }
         
     }
     
-    public List<Product> getProduct(String measure){
-        
-        List<Product> productList = new ArrayList<Product>();
-        
-        if(measure.equals("600x780")){
-            //productList.add(new Product("25x200 mm. trykimp. Brædt", 360, 0));
-        }
-        return null;
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

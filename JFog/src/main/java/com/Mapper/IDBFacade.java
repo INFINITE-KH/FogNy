@@ -31,7 +31,7 @@ public interface IDBFacade {
      public Employee getEmployee(int id) throws SQLException;
      
      // OrderlineMapper
-     public void createOrderline(Orderline ol) throws SQLException;
+     public boolean createOrderline(Orderline ol) throws SQLException;
      
      // OrdersMapper
      public void createOrders(Orders od) throws SQLException;

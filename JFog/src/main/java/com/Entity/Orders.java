@@ -2,11 +2,11 @@ package com.Entity;
 
 public class Orders {
    
-    int ono;
-    int checkout;
-    int deliviry;
-    double shipping;
-    int orderline_id;
+    private int ono;
+    private int checkout;
+    private int deliviry;
+    private double shipping;
+    private int orderline_id;
 
     public Orders(int ono, int checkout, int deliviry, double shipping, int orderline_id) {
         this.ono = ono;

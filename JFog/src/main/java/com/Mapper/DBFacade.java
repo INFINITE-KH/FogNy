@@ -68,8 +68,8 @@ public class DBFacade implements IDBFacade {
     }
 
     @Override
-    public void createOrderline(Orderline ol) throws SQLException {
-        olm.createOrderline(ol);
+    public boolean createOrderline(Orderline ol) throws SQLException {
+        return olm.createOrderline(ol);
     }
 
     @Override

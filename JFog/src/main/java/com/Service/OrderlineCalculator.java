@@ -22,6 +22,8 @@ public class OrderlineCalculator {
         int heigthWood = 4;
         int totalWood = (lengthWood*2)+widthWood+heigthWood;
         
+        //For each wood there is used 4 screws, and a total amount of 75% brackets for the entire carport.
+        //The first parameter is the total amount of wood, the second is the amount of screws, the fourth is amount of brackets.
         Orderline ol = new Orderline(totalWood, totalWood*4, roof, totalWood*3, detail);
         return ol;
     }

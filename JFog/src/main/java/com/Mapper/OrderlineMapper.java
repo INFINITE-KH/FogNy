@@ -15,7 +15,7 @@ public class OrderlineMapper {
         this.conn = new DBConnector().getConnection();
     }
     
-    public void createOrderline(Orderline ol) throws SQLException{
+    public boolean createOrderline(Orderline ol) throws SQLException{
         
         try{
             String sql = "INSERT INTO orderline(wood_qty, screw_qty, roof, bracket, FK_detailid) VALUES(?, ?, ?, ?, ?)";
@@ -25,11 +25,12 @@ public class OrderlineMapper {
             pst.setString(3, ol.getRoof());
             pst.setInt(4, ol.getBracket());
             pst.setInt(5, dm.getDetailId(ol.getDetail().getLength(), ol.getDetail().getHeigth(), ol.getDetail().getWidth(), ol.getDetail().getRoof()));
-
+            return true;
             
         } catch (SQLException ex){
             ex.printStackTrace();
         }
+        return false;
     }
     
 }

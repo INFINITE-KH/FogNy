@@ -2,9 +2,9 @@ package com.Entity;
 
 public class Product {
 
-    int id;
-    String name;
-    double measure;
+    private int id;
+    private String name;
+    private double measure;
 
     public Product(int id, String name, double measure) {
         this.id = id;

@@ -2,10 +2,10 @@ package com.Entity;
 
 public class Detail {
     
-    int length;
-    int heigth;
-    int width;
-    String roof;
+    private int length;
+    private int heigth;
+    private int width;
+    private String roof;
 
     public Detail(int length, int heigth, int width, String roof) {
         this.length = length;

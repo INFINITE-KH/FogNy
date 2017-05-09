@@ -1,11 +1,11 @@
 package com.Entity;
 
 public class Orderline {
-    int wood_qty;
-    int screw_qty;
-    String roof;
-    int bracket;
-    Detail detail;
+    private int wood_qty;
+    private int screw_qty;
+    private String roof;
+    private int bracket;
+    private Detail detail;
 
     public Orderline(int wood_qty, int screw_qty, String roof, int bracket, Detail detail) {
         this.wood_qty = wood_qty;

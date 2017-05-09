@@ -2,13 +2,13 @@ package com.Entity;
 
 public class Customer {
     
-    int id;
-    String fname;
-    String lname;
-    String adress;
-    int cphone;
-    String mail;
-    int FK_ono;
+    private int id;
+    private String fname;
+    private String lname;
+    private String adress;
+    private int cphone;
+    private String mail;
+    private int FK_ono;
 
     public int getId() {
         return id;

@@ -13,18 +13,27 @@ public class OrderlineCalculator {
     public Orderline calcParts(int length, int heigth, int width, String roof){
         Detail detail = new Detail(length, heigth, width, roof);
         
-        // Gange med en factor jo større carporten er
-        // Giv detail på 3*3*3 en fast produkt liste, men hvis målene stiger skal der ganges (ikke brug plus)    
-        Orderline ol = new Orderline((width*heigth+length+40), (width*heigth+length+20)*10+167, roof, (width*heigth+length+20)*10+99, detail);
+        //For every meter, 10 pieces of wood is needed. 
+        //In totalWood amount of wood for length is doubled, as there are 2 sides.
+        int lengthWood = length*10;
+        int widthWood = width*10;
+        
+        //The heigth is just 4 supporting poles.
+        int heigthWood = 4;
+        int totalWood = (lengthWood*2)+widthWood+heigthWood;
+        
+        //For each wood there is used 4 screws, and a total amount of 75% brackets for the entire carport.
+        //The first parameter is the total amount of wood, the second is the amount of screws, the fourth is amount of brackets.
+        Orderline ol = new Orderline(totalWood, totalWood*4, roof, totalWood*3, detail);
         return ol;
     }
     
     public static void main(String[] args) {
         OrderlineCalculator oc = new OrderlineCalculator();
-        Orderline o = oc.calcParts(6, 4, 7, "test");
-        System.out.println(o.getWood_qty());
-        System.out.println(o.getScrew_qty());
-        System.out.println(o.getBracket());
+        Orderline o = oc.calcParts(3, 2, 2, "test");
+        System.out.println("Antal træ: " + o.getWood_qty());
+        System.out.println("Antal skruer: " + o.getScrew_qty());
+        System.out.println("Antal brackets: " + o.getBracket());
     }
     
 }

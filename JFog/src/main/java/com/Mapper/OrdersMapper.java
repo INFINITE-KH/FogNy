@@ -19,8 +19,8 @@ public class OrdersMapper {
         try{
             String sql = "INSERT INTO orders(checkout_time, delivery_time, shipping_price, orderline_id) VALUES(?, ?, ?, ?)";
             PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setInt(1, od.getCheckout());
-            pst.setInt(2, od.getDeliviry());
+            pst.setDate(1, od.getCheckout());
+            pst.setDate(2, od.getDeliviry());
             pst.setDouble(3, od.getShipping());
             pst.setInt(4, od.getOrderline_id());
             

@@ -1,14 +1,16 @@
 package com.Entity;
 
+import java.sql.Date;
+
 public class Orders {
    
     private int ono;
-    private int checkout;
-    private int deliviry;
+    private Date checkout;
+    private Date deliviry;
     private double shipping;
     private int orderline_id;
 
-    public Orders(int ono, int checkout, int deliviry, double shipping, int orderline_id) {
+    public Orders(int ono, Date checkout, Date deliviry, double shipping, int orderline_id) {
         this.ono = ono;
         this.checkout = checkout;
         this.deliviry = deliviry;
@@ -24,19 +26,19 @@ public class Orders {
         this.ono = ono;
     }
 
-    public int getCheckout() {
+    public Date getCheckout() {
         return checkout;
     }
 
-    public void setCheckout(int checkout) {
+    public void setCheckout(Date checkout) {
         this.checkout = checkout;
     }
 
-    public int getDeliviry() {
+    public Date getDeliviry() {
         return deliviry;
     }
 
-    public void setDeliviry(int deliviry) {
+    public void setDeliviry(Date deliviry) {
         this.deliviry = deliviry;
     }
 

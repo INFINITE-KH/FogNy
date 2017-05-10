@@ -1,31 +1,60 @@
 package com.Mapper;
 
 import com.DB.DBConnector;
+import com.Entity.Customer;
 import com.Entity.Orders;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrdersMapper {
-    
+public class OrdersMapper
+{
+
     Connection conn;
-    
-    public OrdersMapper(){
+
+    public OrdersMapper()
+    {
         this.conn = new DBConnector().getConnection();
     }
-    
-    public void createOrders(Orders od) throws SQLException{
-        
-        try{
+
+    public void createOrders(Orders od) throws SQLException
+    {
+
+        try
+        {
             String sql = "INSERT INTO orders(checkout_time, delivery_time, shipping_price, orderline_id) VALUES(?, ?, ?, ?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setDate(1, od.getCheckout());
             pst.setDate(2, od.getDeliviry());
             pst.setDouble(3, od.getShipping());
             pst.setInt(4, od.getOrderline_id());
-            
-        } catch(SQLException ex){
+
+        } catch (SQLException ex)
+        {
             ex.printStackTrace();
-        }   
+        }
     }
+
+    public Orders getOrderByCustommerID(Customer c)
+    {
+        try
+        {
+            String sql = "SELECT * FROM orders WHERE ono = " + c.getFK_ono();
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next())
+            {
+                Orders customerOrder = new Orders(rs.getInt("ono"), rs.getDate("checkout_time"), rs.getDate("delivery_time"), rs.getInt("shipping_price"), rs.getInt("orderline_id"));
+                return customerOrder;
+            }
+
+        } catch (SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
 }

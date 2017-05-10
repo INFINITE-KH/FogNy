@@ -87,4 +87,8 @@ public class DBFacade implements IDBFacade {
         return pm.getAllProduct();
     }
     
+    public Orders getCustomerOrderByCustomer(Customer c)
+    {
+        return om.getOrderByCustommerID(c);
+}
 }

@@ -23,12 +23,12 @@ public class OrdersMapper
 
         try
         {
-            String sql = "INSERT INTO orders(checkout_time, delivery_time, shipping_price, orderline_id) VALUES(?, ?, ?, ?)";
+            String sql = "INSERT INTO orders(checkout_time, delivery_time, shipping_price, carportmaterial_id) VALUES(?, ?, ?, ?)";
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setDate(1, od.getCheckout());
             pst.setDate(2, od.getDeliviry());
             pst.setDouble(3, od.getShipping());
-            pst.setInt(4, od.getOrderline_id());
+            pst.setInt(4, od.getcarportmaterial_id());
 
         } catch (SQLException ex)
         {
@@ -46,7 +46,7 @@ public class OrdersMapper
 
             while (rs.next())
             {
-                Orders customerOrder = new Orders(rs.getInt("ono"), rs.getDate("checkout_time"), rs.getDate("delivery_time"), rs.getInt("shipping_price"), rs.getInt("orderline_id"));
+                Orders customerOrder = new Orders(rs.getInt("ono"), rs.getDate("checkout_time"), rs.getDate("delivery_time"), rs.getInt("shipping_price"), rs.getInt("carportmaterial_id"));
                 return customerOrder;
             }
 

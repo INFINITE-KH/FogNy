@@ -8,14 +8,14 @@ public class Orders {
     private Date checkout;
     private Date deliviry;
     private double shipping;
-    private int orderline_id;
+    private int carportmaterial_id;
 
-    public Orders(int ono, Date checkout, Date deliviry, double shipping, int orderline_id) {
+    public Orders(int ono, Date checkout, Date deliviry, double shipping, int carportmaterial_id) {
         this.ono = ono;
         this.checkout = checkout;
         this.deliviry = deliviry;
         this.shipping = shipping;
-        this.orderline_id = orderline_id;
+        this.carportmaterial_id = carportmaterial_id;
     }
 
     public int getOno() {
@@ -50,17 +50,17 @@ public class Orders {
         this.shipping = shipping;
     }
 
-    public int getOrderline_id() {
-        return orderline_id;
+    public int getcarportmaterial_id() {
+        return carportmaterial_id;
     }
 
-    public void setOrderline_id(int orderline_id) {
-        this.orderline_id = orderline_id;
+    public void setcarportmaterial_id(int carportmaterial_id) {
+        this.carportmaterial_id = carportmaterial_id;
     }
 
     @Override
     public String toString() {
-        return "Orders{" + "ono=" + ono + ", checkout=" + checkout + ", deliviry=" + deliviry + ", shipping=" + shipping + ", orderline_id=" + orderline_id + '}';
+        return "Orders{" + "ono=" + ono + ", checkout=" + checkout + ", deliviry=" + deliviry + ", shipping=" + shipping + ", orderline_id=" + carportmaterial_id + '}';
     }
 
  

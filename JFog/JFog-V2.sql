@@ -47,8 +47,8 @@ ono INT(5) PRIMARY KEY AUTO_INCREMENT,
 checkout_time DATETIME(6),
 delivery_time DATETIME(6),
 shipping_price DOUBLE,
-orderline_id INT(5),
-FOREIGN KEY(orderline_id) REFERENCES orderline(id)
+carportmaterial_id INT(5),
+FOREIGN KEY(carportmaterial_id) REFERENCES carportmaterial(id)
 );
 
 CREATE TABLE employee(

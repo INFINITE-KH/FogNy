@@ -37,7 +37,7 @@ public class CustomerOrder extends HttpServlet {
         request.getSession().setAttribute("checkout_time", o.getCheckout());
         request.getSession().setAttribute("delivery_time", o.getDeliviry());
         request.getSession().setAttribute("shipping_price", o.getShipping());
-        request.getSession().setAttribute("orderline_id", o.getOrderline_id());
+        request.getSession().setAttribute("carportmaterial_id", o.getcarportmaterial_id());
         
         request.getRequestDispatcher("").forward(request, response);
 } 

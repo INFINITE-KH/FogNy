@@ -1,13 +1,13 @@
 package com.Service.Entity;
 
-public class Orderline {
+public class CarportMaterial {
     private int wood_qty;
     private int screw_qty;
     private String roof;
     private int bracket;
     private Detail detail;
 
-    public Orderline(int wood_qty, int screw_qty, String roof, int bracket, Detail detail) {
+    public CarportMaterial(int wood_qty, int screw_qty, String roof, int bracket, Detail detail) {
         this.wood_qty = wood_qty;
         this.screw_qty = screw_qty;
         this.bracket = bracket;

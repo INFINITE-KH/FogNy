@@ -1,7 +1,7 @@
 package com.presentation.Servlet;
 
 import com.Service.Entity.Detail;
-import com.Service.Entity.Orderline;
+import com.Service.Entity.CarportMaterial;
 import com.data.Mapper.DBFacade;
 import com.Service.calculator.MaterialCalculator;
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class CreateDetail extends HttpServlet {
         String roof = request.getParameter("roof");
         
         Detail d = new Detail(length, heigth, width, roof);
-        Orderline o = oc.calcParts(d.getLength(), d.getHeigth(), d.getWidth(), d.getRoof());
+        CarportMaterial cm = oc.calcParts(d.getLength(), d.getHeigth(), d.getWidth(), d.getRoof());
         
         //TODO: Create an order using the detail and order created above and link that to costumer
         // then add the variables of the order to session variables 
@@ -41,10 +41,10 @@ public class CreateDetail extends HttpServlet {
             request.getSession().setAttribute("heigth", d.getHeigth());
             request.getSession().setAttribute("width", d.getWidth());
             request.getSession().setAttribute("roof", d.getRoof());
-            if(dm.createOrderline(o)){
-                request.getSession().setAttribute("woodAmount", o.getWood_qty());
-                request.getSession().setAttribute("screwAmount", o.getScrew_qty());
-                request.getSession().setAttribute("bracketAmount", o.getBracket());
+            if(dm.createCarportMaterial(cm)){
+                request.getSession().setAttribute("woodAmount", cm.getWood_qty());
+                request.getSession().setAttribute("screwAmount", cm.getScrew_qty());
+                request.getSession().setAttribute("bracketAmount", cm.getBracket());
             }
             request.getRequestDispatcher("").forward(request, response);
 

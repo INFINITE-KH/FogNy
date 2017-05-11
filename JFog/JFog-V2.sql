@@ -32,7 +32,7 @@ FK_carportid INT(5),
 FOREIGN KEY carport(FK_carportid) REFERENCES carport(id)
 );
 
-CREATE TABLE orderline(
+CREATE TABLE carportmaterial(
 id INT(5) PRIMARY KEY,
 wood_qty INT(10),
 screw_qty INT(5),

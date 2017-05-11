@@ -4,7 +4,7 @@ import com.Service.Entity.Carport;
 import com.Service.Entity.Customer;
 import com.Service.Entity.Detail;
 import com.Service.Entity.Employee;
-import com.Service.Entity.Orderline;
+import com.Service.Entity.CarportMaterial;
 import com.Service.Entity.Orders;
 import com.Service.Entity.Product;
 import java.sql.SQLException;
@@ -31,7 +31,7 @@ public interface IDBFacade {
      public Employee getEmployee(int id) throws SQLException;
      
      // OrderlineMapper
-     public boolean createOrderline(Orderline ol) throws SQLException;
+     public boolean createCarportMaterial(CarportMaterial cm) throws SQLException;
      
      // OrdersMapper
      public void createOrders(Orders od) throws SQLException;

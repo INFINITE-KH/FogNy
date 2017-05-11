@@ -4,7 +4,7 @@ import com.Service.Entity.Carport;
 import com.Service.Entity.Customer;
 import com.Service.Entity.Detail;
 import com.Service.Entity.Employee;
-import com.Service.Entity.Orderline;
+import com.Service.Entity.CarportMaterial;
 import com.Service.Entity.Orders;
 import com.Service.Entity.Product;
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ public class DBFacade implements IDBFacade {
     CustomerMapper cm = new CustomerMapper();
     DetailMapper dm = new DetailMapper();
     EmployeeMapper em = new EmployeeMapper();
-    OrderlineMapper olm = new OrderlineMapper();
+    CarportMaterialMapper cmm = new CarportMaterialMapper();
     OrdersMapper om = new OrdersMapper();
     ProductMapper pm = new ProductMapper();
     
@@ -68,8 +68,8 @@ public class DBFacade implements IDBFacade {
     }
 
     @Override
-    public boolean createOrderline(Orderline ol) throws SQLException {
-        return olm.createOrderline(ol);
+    public boolean createCarportMaterial(CarportMaterial cm) throws SQLException {
+        return cmm.createCarportMaterial(cm);
     }
 
     @Override
@@ -90,5 +90,6 @@ public class DBFacade implements IDBFacade {
     public Orders getCustomerOrderByCustomer(Customer c)
     {
         return om.getOrderByCustommerID(c);
-}
+    }
+
 }

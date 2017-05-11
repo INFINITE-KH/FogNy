@@ -6,11 +6,11 @@
 package com.Service.calculator;
 
 import com.Service.Entity.Detail;
-import com.Service.Entity.Orderline;
+import com.Service.Entity.CarportMaterial;
 
 public class MaterialCalculator {
     
-    public Orderline calcParts(int length, int heigth, int width, String roof){
+    public CarportMaterial calcParts(int length, int heigth, int width, String roof){
         Detail detail = new Detail(length, heigth, width, roof);
         
         //For every meter, 10 pieces of wood is needed. 
@@ -24,13 +24,13 @@ public class MaterialCalculator {
         
         //For each wood there is used 4 screws, and a total amount of 75% brackets for the entire carport.
         //The first parameter is the total amount of wood, the second is the amount of screws, the fourth is amount of brackets.
-        Orderline ol = new Orderline(totalWood, totalWood*4, roof, totalWood*3, detail);
+        CarportMaterial ol = new CarportMaterial(totalWood, totalWood*4, roof, totalWood*3, detail);
         return ol;
     }
     
     public static void main(String[] args) {
         MaterialCalculator oc = new MaterialCalculator();
-        Orderline o = oc.calcParts(3, 2, 2, "test");
+        CarportMaterial o = oc.calcParts(3, 2, 2, "test");
         System.out.println("Antal træ: " + o.getWood_qty());
         System.out.println("Antal skruer: " + o.getScrew_qty());
         System.out.println("Antal brackets: " + o.getBracket());

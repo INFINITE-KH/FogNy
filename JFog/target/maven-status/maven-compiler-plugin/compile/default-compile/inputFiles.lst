@@ -1,10 +1,30 @@
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Entity/Customer.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Entity/Orders.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Entity/Roof.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Servlet/OrdersServlet.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/DB/DBConnector.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Mapper/EmployeeMapper.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Entity/Employee.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Entity/Screw.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Entity/Wood.java
-/Users/KH/Desktop/2. Sem/Johannes-Fog/JFog/src/main/java/com/Mapper/OrdersMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Entity\Detail.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Service\package-info.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Servlet\InsertEmpolyeeServlet.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\OrdersMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\IDBFacade.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Servlet\package-info.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Servlet\Carport.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\OrderlineMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\DB\DBConnector.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Entity\Product.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\ProductMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Entity\Orders.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Entity\CarportPart.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\DetailMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\EmployeeMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Servlet\Signup.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Entity\Employee.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\CarportMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Servlet\CreateDetail.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Servlet\CreateCustomer.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Servlet\Login.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Service\OrderlineCalculator.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Entity\Carport.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Servlet\CustomerInformation.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Entity\Customer.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Entity\Orderline.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\CarportPartMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\DBFacade.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\Mapper\CustomerMapper.java
+C:\Users\Computer\Documents\GitHub\JohannesFog\Johannes-Fog\JFog\src\main\java\com\exception\EmployeeException.java

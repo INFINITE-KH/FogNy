@@ -1,6 +1,6 @@
 package com.Mapper;
 
-import data.DBConnector;
+import com.DB.DBConnector;
 import com.Entity.Customer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

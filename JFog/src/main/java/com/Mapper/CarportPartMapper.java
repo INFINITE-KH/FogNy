@@ -1,6 +1,6 @@
 package com.Mapper;
 
-import data.DBConnector;
+import com.DB.DBConnector;
 import com.Entity.CarportPart;
 import com.Entity.Product;
 import java.sql.Connection;

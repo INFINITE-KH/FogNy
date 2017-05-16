@@ -2,6 +2,7 @@ package com.data.Mapper;
 
 import com.data.DB.DBConnector;
 import com.Service.Entity.Carport;
+import com.data.exception.CarportException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,8 +18,8 @@ public class CarportMapper {
         this.conn = new DBConnector().getConnection();
     }
     
-    public Carport getCarport(int id) throws SQLException{
-    
+    public Carport getCarport(int id) throws CarportException{
+        Carport cp = null;
         try{  
         String sql = "SELECT * FROM carport WHERE id=?";
         PreparedStatement pst = conn.prepareStatement(sql);
@@ -31,14 +32,18 @@ public class CarportMapper {
             String measure = rs.getString("measure");
             double price = rs.getDouble("price");
             
-            Carport cp = new Carport(cpid, carname, measure, price);
-            return cp;
+            cp = new Carport(cpid, carname, measure, price);
+            
+        }
+        else{
+            throw new CarportException("Valgte ID eksistere ikke");
         }
         
         } catch (SQLException ex){
             System.out.println(ex);
+            throw new CarportException("Valgte ID eksistere ikke");
         }
-        return null;
+        return cp;
     }
     
     public List<Carport> getAllCarport() throws SQLException{
@@ -60,5 +65,10 @@ public class CarportMapper {
             index++;
         }
         return ac;
+    }
+    public static void main(String[] args) throws SQLException, CarportException {
+        CarportMapper cm = new CarportMapper();
+        
+        System.out.println(cm.getCarport(1));
     }
 }

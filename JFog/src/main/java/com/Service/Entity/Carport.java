@@ -53,5 +53,11 @@ public class Carport {
     public void setPartsList(List<CarportPart> cpList){
         this.partList = cpList;
     }
+
+    @Override
+    public String toString() {
+        return "Carport{" + "id=" + id + ", carname=" + carname + ", measure=" + measure + ", price=" + price + ", partList=" + partList + '}';
+    }
+    
     
 }

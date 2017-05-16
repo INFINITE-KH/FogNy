@@ -7,6 +7,7 @@ import com.Service.Entity.Employee;
 import com.Service.Entity.CarportMaterial;
 import com.Service.Entity.Orders;
 import com.Service.Entity.Product;
+import com.data.exception.CarportException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class DBFacade implements IDBFacade {
     ProductMapper pm = new ProductMapper();
     
     @Override
-    public Carport getCarport(int id) throws SQLException {
+    public Carport getCarport(int id) throws CarportException {
        return cpm.getCarport(id);
     }
 

@@ -7,6 +7,7 @@ import com.Service.Entity.Employee;
 import com.Service.Entity.CarportMaterial;
 import com.Service.Entity.Orders;
 import com.Service.Entity.Product;
+import com.data.exception.CarportException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
 public interface IDBFacade {
     
      // CarportMapper
-     public Carport getCarport(int id) throws SQLException;
+     public Carport getCarport(int id) throws CarportException;
      public List<Carport> getAllCarport() throws SQLException;
      
      // CustomerMapper

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -52,6 +53,11 @@ public class Carport extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(Carport.class.getName()).log(Level.SEVERE, null, ex);
+        
+            String msg = ex.getMessage();
+            request.setAttribute("msg", msg);
+            RequestDispatcher rd = request.getRequestDispatcher("");
+            rd.forward(request, response);
         }
     }
 

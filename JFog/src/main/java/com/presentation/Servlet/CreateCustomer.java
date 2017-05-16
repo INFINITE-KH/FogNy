@@ -23,7 +23,7 @@ public class CreateCustomer extends HttpServlet {
         DBFacade cm = new DBFacade();
         
         String fname = request.getParameter("fname");
-        String lname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
         String adress = request.getParameter("adress");
         int cphone = Integer.getInteger(request.getParameter("cphone"));
         String mail = request.getParameter("mail");

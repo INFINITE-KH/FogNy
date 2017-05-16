@@ -49,7 +49,7 @@ public class CustomerMapper {
          if(rs.next()){
              int cid = rs.getInt("id");
              String fname = rs.getString("fname");
-             String lname = rs.getString("fname");
+             String lname = rs.getString("lname");
              String adress = rs.getString("adress");
              int cphone = rs.getInt("cphone");
              String mail = rs.getString("mail");
@@ -73,7 +73,7 @@ public class CustomerMapper {
         while(rs.next()){ 
             int cid = rs.getInt("id");
             String fname = rs.getString("fname");
-            String lname = rs.getString("fname");
+            String lname = rs.getString("lname");
             String adress = rs.getString("adress");
             int cphone = rs.getInt("cphone");
             String mail = rs.getString("mail");

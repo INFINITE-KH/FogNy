@@ -4,6 +4,7 @@ import Service.Entity.Detail;
 import Service.Entity.CarportMaterial;
 import data.Mapper.DBFacade;
 import Service.calculator.MaterialCalculator;
+import data.Mapper.IDBFacade;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -23,7 +24,7 @@ public class CreateDetail extends HttpServlet {
             throws ServletException, IOException, SQLException {
         
         // DetailMapper dm = new DetailMapper();
-        DBFacade dm = new DBFacade();
+        IDBFacade dbf = new DBFacade();
         
         int length = Integer.parseInt(request.getParameter("length"));
         int heigth = Integer.parseInt(request.getParameter("heigth"));
@@ -36,12 +37,12 @@ public class CreateDetail extends HttpServlet {
         //TODO: Create an order using the detail and order created above and link that to costumer
         // then add the variables of the order to session variables 
         
-        if(dm.createDetail(d)){
+        if(dbf.createDetail(d)){
             request.getSession().setAttribute("length", d.getLength());
             request.getSession().setAttribute("heigth", d.getHeigth());
             request.getSession().setAttribute("width", d.getWidth());
             request.getSession().setAttribute("roof", d.getRoof());
-            if(dm.createCarportMaterial(cm)){
+            if(dbf.createCarportMaterial(cm)){
                 request.getSession().setAttribute("woodAmount", cm.getWood_qty());
                 request.getSession().setAttribute("screwAmount", cm.getScrew_qty());
                 request.getSession().setAttribute("bracketAmount", cm.getBracket());

@@ -3,6 +3,7 @@ package presentation.Servlet;
 import Service.Entity.Customer;
 import data.Mapper.CustomerMapper;
 import data.Mapper.DBFacade;
+import data.Mapper.IDBFacade;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -21,9 +22,9 @@ public class CustomerInformation extends HttpServlet {
             throws ServletException, IOException, SQLException {
        
         // CustomerMapper cm = new CustomerMapper();
-        DBFacade cm = new DBFacade();
+        IDBFacade dbf = new DBFacade();
         
-        Customer c = cm.getCustomer(Integer.parseInt(request.getParameter("cid")));
+        Customer c = dbf.getCustomer(Integer.parseInt(request.getParameter("cid")));
         
         request.getSession().setAttribute("cid", c.getId());
         request.getSession().setAttribute("fname", c.getFname());

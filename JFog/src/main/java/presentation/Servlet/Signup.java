@@ -3,6 +3,7 @@ package presentation.Servlet;
 import Service.Entity.Employee;
 import data.Mapper.DBFacade;
 import data.Mapper.EmployeeMapper;
+import data.Mapper.IDBFacade;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -20,14 +21,14 @@ public class Signup extends HttpServlet {
             throws ServletException, IOException, SQLException {
         
         // EmployeeMapper e = new EmployeeMapper();
-        DBFacade e = new DBFacade();
+        IDBFacade dbf = new DBFacade();
         
         int id = Integer.parseInt(request.getParameter("eid"));
         String password = request.getParameter("psw");
         
         Employee em = new Employee(id, password);
         
-        if(e.createEmployee(em)){
+        if(dbf.createEmployee(em)){
                     
         request.getSession().setAttribute("eid", em.getId());
         request.getSession().setAttribute("psw", em.getPassword());

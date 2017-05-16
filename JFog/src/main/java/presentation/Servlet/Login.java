@@ -3,6 +3,7 @@ package presentation.Servlet;
 import Service.Entity.Employee;
 import data.Mapper.DBFacade;
 import data.Mapper.EmployeeMapper;
+import data.Mapper.IDBFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -34,10 +35,10 @@ public class Login extends HttpServlet {
             password = request.getParameter("psw");
             
             // EmployeeMapper em = new EmployeeMapper();
-            DBFacade em = new DBFacade();
+            IDBFacade dbf = new DBFacade();
             
             Employee e = new Employee(id, password);
-            emp = em.getEmployee(e.getId());          
+            emp = dbf.getEmployee(e.getId());          
             
             if(id ==(emp.getId()) && password.equals(emp.getPassword())){
                 request.getRequestDispatcher("").forward(request, response);

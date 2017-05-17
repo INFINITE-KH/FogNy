@@ -69,6 +69,8 @@ FK_ono INT(5),
 FOREIGN KEY(FK_ono) REFERENCES orders(ono)
 );
 
+INSERT INTO employee(id, ename, ephone, password) Values(1, 'Ali', 12345678, '1234');
+
 INSERT INTO carport(id, carname, measure, price) VALUES(1, 'CP01 DUR', '600x780', 0.0);
 INSERT INTO carport(id, carname, measure, price) VALUES(2, 'CAR01 HR', '360x730', 0.0);
 

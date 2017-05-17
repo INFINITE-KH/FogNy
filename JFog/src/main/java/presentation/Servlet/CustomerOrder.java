@@ -8,6 +8,7 @@ package presentation.Servlet;
 import Service.Entity.Customer;
 import Service.Entity.Orders;
 import data.Mapper.DBFacade;
+import data.exception.CustomerException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -24,7 +25,9 @@ public class CustomerOrder extends HttpServlet {
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, SQLException        
+       
+ {
        
 
         DBFacade facade = new DBFacade();

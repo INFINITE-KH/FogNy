@@ -3,6 +3,7 @@ package presentation.Servlet;
 import Service.Entity.Customer;
 import data.Mapper.CustomerMapper;
 import data.Mapper.DBFacade;
+import data.exception.CustomerException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;

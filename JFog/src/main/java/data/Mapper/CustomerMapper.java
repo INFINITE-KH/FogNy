@@ -2,6 +2,7 @@ package data.Mapper;
 
 import data.DB.DBConnector;
 import Service.Entity.Customer;
+import data.exception.CustomerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +17,7 @@ public class CustomerMapper {
         this.conn = new DBConnector().getConnection();
     }
     
-    public boolean createCustomer(Customer c) throws SQLException{
+    public boolean createCustomer(Customer c) throws CustomerException{
         
         try{
             String sql = "INSERT INTO customer(fname, lname, adress, cphone, mail) VALUES(?, ?, ?, ?, ?)";

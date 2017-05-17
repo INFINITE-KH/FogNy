@@ -38,15 +38,15 @@
 
             <form class="form-horizontal" action="Login" method="POST">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="ename">Employee Name:</label>
+                    <label class="control-label col-sm-2" for="eid">Employee ID:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email" placeholder="Enter Name" name="ename">
+                        <input type="text" class="form-control" id="eid" name="eid">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="pwd">Password:</label>
+                    <label class="control-label col-sm-2" for="psw">Password:</label>
                     <div class="col-sm-10">          
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass">
+                        <input type="password" class="form-control" id="psw" name="psw">
                     </div>
                 </div>
                 <div class="form-group">        

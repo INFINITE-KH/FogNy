@@ -36,6 +36,7 @@ public interface IDBFacade {
      
      // OrdersMapper
      public void createOrders(Orders od) throws SQLException;
+     public Orders getCustomerOrderByCustomer(Customer c);
      
      // ProductMapper
      public void createProduct(Product p) throws SQLException;

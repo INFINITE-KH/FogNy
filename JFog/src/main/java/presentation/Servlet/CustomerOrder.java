@@ -8,6 +8,7 @@ package presentation.Servlet;
 import Service.Entity.Customer;
 import Service.Entity.Orders;
 import data.Mapper.DBFacade;
+import data.Mapper.IDBFacade;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -27,11 +28,11 @@ public class CustomerOrder extends HttpServlet {
             throws ServletException, IOException, SQLException {
        
 
-        DBFacade facade = new DBFacade();
+        IDBFacade dbf = new DBFacade();
         
-        Customer c = facade.getCustomer(Integer.parseInt(request.getParameter("cid")));
+        Customer c = dbf.getCustomer(Integer.parseInt(request.getParameter("cid")));
         
-        Orders o = facade.getCustomerOrderByCustomer(c);
+        Orders o = dbf.getCustomerOrderByCustomer(c);
         
         request.getSession().setAttribute("ono", o.getOno());
         request.getSession().setAttribute("checkout_time", o.getCheckout());

@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class InsertEmpolyeeServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, EmployeeException {
+            throws ServletException, IOException, EmployeeException, SQLException {
 
         DBFacade cm = new DBFacade();
         // reads from form DATA
@@ -58,6 +58,8 @@ public class InsertEmpolyeeServlet extends HttpServlet {
             processRequest(request, response);
         } catch (EmployeeException ex) {
             Logger.getLogger(InsertEmpolyeeServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(InsertEmpolyeeServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -76,6 +78,8 @@ public class InsertEmpolyeeServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (EmployeeException ex) {
+            Logger.getLogger(InsertEmpolyeeServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(InsertEmpolyeeServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

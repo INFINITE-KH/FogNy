@@ -30,6 +30,7 @@ public interface IDBFacade {
      // EmployeeMapper
      public boolean createEmployee(Employee e) throws SQLException;
      public Employee getEmployee(int id) throws SQLException;
+     public boolean verifyEmployee(int id, String password) throws SQLException;
      
      // OrderlineMapper
      public boolean createCarportMaterial(CarportMaterial cm) throws SQLException;

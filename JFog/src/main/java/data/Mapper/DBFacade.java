@@ -67,6 +67,11 @@ public class DBFacade implements IDBFacade {
     public Employee getEmployee(int id) throws SQLException {
         return em.getEmployee(id);
     }
+    
+    @Override
+    public boolean verifyEmployee(int id, String password) throws SQLException{
+        return em.verifyEmployee(id, password);
+    }
 
     @Override
     public boolean createCarportMaterial(CarportMaterial cm) throws SQLException {

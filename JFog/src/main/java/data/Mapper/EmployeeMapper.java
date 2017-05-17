@@ -63,11 +63,33 @@ public class EmployeeMapper {
         return null;
     }
     
+    public boolean verifyEmployee(int id, String password){
+        
+        try{
+            String sql = "SELECT id, password FROM employee WHERE id=?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, id);
+            
+            ResultSet rs = pst.executeQuery();
+            
+        if(rs.next()){
+            rs.getString("password");         
+            if(password.equals(rs.getString("password")))
+                return true;
+        }
+        
+        
+    } catch (SQLException ex){
+            System.out.println(ex);
+    }
+      return false;  
+    }
+    
     public static void main(String[] args) throws SQLException {
         
         EmployeeMapper e = new EmployeeMapper();
-        Employee c = e.getEmployee(1);
-        System.out.println(c.getEname());
+        boolean c = e.verifyEmployee(1, "12324");
+        System.out.println(c);
         
     }
 }

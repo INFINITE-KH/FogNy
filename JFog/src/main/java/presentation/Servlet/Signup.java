@@ -3,7 +3,11 @@ package presentation.Servlet;
 import Service.Entity.Employee;
 import data.Mapper.DBFacade;
 import data.Mapper.EmployeeMapper;
+<<<<<<< HEAD
 import data.Mapper.IDBFacade;
+=======
+import data.exception.EmployeeException;
+>>>>>>> f81236831051ec05cda136697f0bbaa7e3d8d7be
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -18,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Signup extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, EmployeeException {
         
         // EmployeeMapper e = new EmployeeMapper();
         IDBFacade dbf = new DBFacade();
@@ -53,7 +57,7 @@ public class Signup extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
+        } catch (EmployeeException ex) {
             Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -71,7 +75,7 @@ public class Signup extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
+        } catch (EmployeeException ex) {
             Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

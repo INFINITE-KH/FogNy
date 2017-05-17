@@ -3,7 +3,11 @@ package presentation.Servlet;
 import Service.Entity.Customer;
 import data.Mapper.CustomerMapper;
 import data.Mapper.DBFacade;
+<<<<<<< HEAD
 import data.Mapper.IDBFacade;
+=======
+import data.exception.CustomerException;
+>>>>>>> f81236831051ec05cda136697f0bbaa7e3d8d7be
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -18,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CreateCustomer extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {       
+            throws ServletException, IOException, CustomerException {       
 
         // CustomerMapper cm = new CustomerMapper();
         IDBFacade dbf = new DBFacade();
@@ -57,7 +61,7 @@ public class CreateCustomer extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
+        } catch (CustomerException ex) {
             Logger.getLogger(CreateCustomer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -75,7 +79,7 @@ public class CreateCustomer extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
+        } catch (CustomerException ex) {
             Logger.getLogger(CreateCustomer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

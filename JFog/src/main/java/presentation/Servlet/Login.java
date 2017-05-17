@@ -3,7 +3,11 @@ package presentation.Servlet;
 import Service.Entity.Employee;
 import data.Mapper.DBFacade;
 import data.Mapper.EmployeeMapper;
+<<<<<<< HEAD
 import data.Mapper.IDBFacade;
+=======
+import data.exception.EmployeeException;
+>>>>>>> f81236831051ec05cda136697f0bbaa7e3d8d7be
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -18,17 +22,36 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 
 public class Login extends HttpServlet {
+//
+//    public Employee emp;
+//    boolean loggedin = false;
+//    int id;
+//    String password;
 
-    public Employee emp;
-    
-    boolean loggedin = false;
-    int id;
-    String password;
-    
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, EmployeeException {
+//        if (!loggedin) {
+//
+//            id = Integer.parseInt(request.getParameter("eid"));
+//            password = request.getParameter("psw");
+//            DBFacade em = new DBFacade();
+//            Employee e = new Employee(id, password);
+//            emp = em.getEmployee(e.getId());
+//
+//            if (id == (emp.getId()) && password.equals(emp.getPassword())) {
+//                request.getRequestDispatcher("Admin/home.jsp").forward(request, response);
+//
+//            } else {
+//                request.getSession().setAttribute("eid", id);
+//                request.getRequestDispatcher("Login.jsp").forward(request, response);
+//            }
+//        }
+        DBFacade dfacede = new DBFacade();
+        int id = Integer.parseInt(request.getParameter("eid"));
+        String password = request.getParameter("psw");
+        String employeeName = "";
         
+<<<<<<< HEAD
         if(!loggedin){
             
             id = Integer.parseInt(request.getParameter("eid"));
@@ -46,25 +69,40 @@ public class Login extends HttpServlet {
             } else{
                 request.getRequestDispatcher("").forward(request, response);
             }
+=======
+        Employee em = dfacede.geEmployee(id, password);
+        employeeName = em.getEname();
+
+        if (em == null) {
+            response.sendRedirect("Login.jsp");
+        } else {
+            request.getSession().setAttribute("ename", employeeName);
+            response.sendRedirect("Admin/home.jsp");
+>>>>>>> f81236831051ec05cda136697f0bbaa7e3d8d7be
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+
+
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+/**
+ * Handles the HTTP <code>GET</code> method.
+ *
+ * @param request servlet request
+ * @param response servlet response
+ * @throws ServletException if a servlet-specific error occurs
+ * @throws IOException if an I/O error occurs
+ */
+@Override
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (EmployeeException ex) {
+            Logger.getLogger(Login.class
+.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -77,12 +115,15 @@ public class Login extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (EmployeeException ex) {
+            Logger.getLogger(Login.class
+.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -92,7 +133,7 @@ public class Login extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

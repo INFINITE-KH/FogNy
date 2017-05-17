@@ -2,6 +2,7 @@ package data.Mapper;
 
 import data.DB.DBConnector;
 import Service.Entity.Employee;
+import data.exception.EmployeeException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,7 +16,7 @@ public class EmployeeMapper {
         this.conn = new DBConnector().getConnection();
     }
     
-    public boolean createEmployee(Employee e) throws SQLException{
+    public boolean createEmployee(Employee e) throws EmployeeException{
         
         try{
             String sql = "INSERT INTO employee(id, ename, ephone, password) VALUES(?, ?, ?, ?)";
@@ -38,7 +39,7 @@ public class EmployeeMapper {
         }
     }
     
-    public Employee getEmployee(int id) throws SQLException{
+    public Employee getEmployee(int id) throws EmployeeException{
         
         try{
             String sql = "SELECT * FROM employee WHERE id=?";
@@ -62,8 +63,35 @@ public class EmployeeMapper {
         }
         return null;
     }
+    /*  login by mohamed */
+    public Employee geEmployee(int id, String password) throws EmployeeException {
+        EmployeeMapper em = new EmployeeMapper();
+        Employee e = null;
+        try {
+            String sql = "SELECT * FROM employee WHERE id = ? AND password = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, id);
+            pst.setString(2, password);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                int em_id = rs.getInt("id");
+                String em_name = rs.getString("ename");
+                int em_phone = rs.getInt("ephone");
+                String em_password = rs.getString("password");
+                e = new Employee(em_id, em_name, em_phone, em_password);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+
+        return e;
+    }
+
+    /* end login*/
     
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws EmployeeException {
         
         EmployeeMapper e = new EmployeeMapper();
         Employee c = e.getEmployee(1);

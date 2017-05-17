@@ -8,7 +8,11 @@ package presentation.Servlet;
 import Service.Entity.Customer;
 import Service.Entity.Orders;
 import data.Mapper.DBFacade;
+<<<<<<< HEAD
 import data.Mapper.IDBFacade;
+=======
+import data.exception.CustomerException;
+>>>>>>> f81236831051ec05cda136697f0bbaa7e3d8d7be
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -25,7 +29,9 @@ public class CustomerOrder extends HttpServlet {
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, SQLException        
+       
+ {
        
 
         IDBFacade dbf = new DBFacade();

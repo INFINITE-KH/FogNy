@@ -1,0 +1,11 @@
+#surefire
+#Fri May 19 20:46:35 CEST 2017
+jpda.address=50691
+maven.ext.class.path=/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/java/maven-nblib/netbeans-eventspy.jar
+jpda.listen=true
+forkMode=once
+user.dir=/Users/KH/Desktop/FogNy/JFog
+localRepository=/Users/KH/.m2/repository
+test=JUnit
+basedir=/Users/KH/Desktop/FogNy/JFog
+maven.surefire.debug=-Xdebug -Xrunjdwp\:transport\=dt_socket,server\=n,address\=50691

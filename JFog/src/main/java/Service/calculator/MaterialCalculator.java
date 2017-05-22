@@ -10,6 +10,14 @@ import Service.Entity.CarportMaterial;
 
 public class MaterialCalculator {
     
+    /**
+     * Calcculate parts needed for a carport with the dimensions given in the parameters
+     * @param length
+     * @param heigth
+     * @param width
+     * @param roof
+     * @return 
+     */
     public CarportMaterial calcParts(int length, int heigth, int width, String roof){
         Detail detail = new Detail(length, heigth, width, roof);
         

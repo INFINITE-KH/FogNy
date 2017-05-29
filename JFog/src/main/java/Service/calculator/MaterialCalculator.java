@@ -11,7 +11,7 @@ import Service.Entity.CarportMaterial;
 public class MaterialCalculator {
     
     /**
-     * Calcculate parts needed for a carport with the dimensions given in the parameters
+     * Calculate parts needed for a carport with the dimensions given in the parameters
      * @param length
      * @param heigth
      * @param width

@@ -1,6 +1,5 @@
 package presentation.Servlet;
 
-import data.Mapper.CarportMapper;
 import data.Mapper.DBFacade;
 import data.Mapper.IDBFacade;
 import java.io.IOException;
@@ -61,6 +60,14 @@ public class Carport extends HttpServlet {
             rd.forward(request, response);
         }
     }
+    
+    
+    // catch carportexception'
+    // set attribute med fejlmessage
+    //oprette en jsp errorpage
+    //catch (carportexception ex) {
+    //       request,getsession().setAttribute ("Error", "Der opstod desværre en fejl"
+    // Kalder attributen error fra errorpage
 
     /**
      * Handles the HTTP <code>POST</code> method.

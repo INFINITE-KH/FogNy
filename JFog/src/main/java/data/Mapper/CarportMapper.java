@@ -41,7 +41,7 @@ public class CarportMapper {
         
         } catch (SQLException ex){
             System.out.println(ex);
-            throw new CarportException("Der opstod et problem med at hente carporten");
+            throw new CarportException("Der opstod et problem med at hente carporten" + ex.getMessage());
         }
         return cp;
     }

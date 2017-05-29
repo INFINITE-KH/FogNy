@@ -27,7 +27,7 @@ public class CustomerMapper {
             pst.setInt(4, c.getCphone());
             pst.setString(5, c.getMail());
             
-            pst.executeQuery();
+            pst.executeUpdate();
             
             return true;
         } catch(SQLException ex){

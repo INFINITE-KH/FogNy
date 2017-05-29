@@ -8,7 +8,7 @@ public class DBConnector {
     private static String driver = "com.mysql.jdbc.Driver";
     private static String URL = "jdbc:mysql://127.0.0.1:3306/JFog";
     private static String id = "root";
-    private static String pw = "1234";
+    private static String pw = "Dogan1997";
 
     public Connection getConnection() {
         Connection con = null;

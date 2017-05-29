@@ -3,9 +3,7 @@ package presentation.Servlet;
 import Service.Entity.Employee;
 import data.exception.EmployeeException;
 import data.Mapper.DBFacade;
-import data.Mapper.EmployeeMapper;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class InsertEmpolyeeServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, EmployeeException {
+            throws ServletException, IOException, EmployeeException, SQLException {
 
         DBFacade cm = new DBFacade();
         // reads from form DATA
@@ -58,6 +56,9 @@ public class InsertEmpolyeeServlet extends HttpServlet {
             processRequest(request, response);
         } catch (EmployeeException ex) {
             Logger.getLogger(InsertEmpolyeeServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(InsertEmpolyeeServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -76,6 +77,9 @@ public class InsertEmpolyeeServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (EmployeeException ex) {
+            Logger.getLogger(InsertEmpolyeeServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex)
+        {
             Logger.getLogger(InsertEmpolyeeServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

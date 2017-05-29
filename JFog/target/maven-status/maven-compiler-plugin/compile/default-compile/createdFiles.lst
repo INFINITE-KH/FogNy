@@ -1,3 +1,4 @@
+data/Mapper/CarportPartMapper.class
 presentation/Servlet/CreateDetail.class
 Service/calculator/MaterialCalculator.class
 data/Mapper/CarportMaterialMapper.class
@@ -12,10 +13,12 @@ Service/Entity/Detail.class
 Service/Entity/Customer.class
 data/Mapper/DetailMapper.class
 Service/Entity/Employee.class
+data/exception/DetailException.class
 data/exception/EmployeeException.class
 data/Mapper/EmployeeMapper.class
 data/exception/ProductException.class
 data/Mapper/ProductMapper.class
+data/exception/CarportMaterialException.class
 Service/Entity/Orders.class
 data/Mapper/OrdersMapper.class
 data/Mapper/DBFacade.class
